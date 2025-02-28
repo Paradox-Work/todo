@@ -6,4 +6,9 @@
 
 @section('content')
 <h1>Sveiks 2!</h1>
+<ul>
+  @foreach ($news as $new)
+    <li>{{ $new->content }}</li>
+  @endforeach
+</ul>
 @endsection

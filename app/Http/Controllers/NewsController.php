@@ -8,8 +8,16 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $todos = News::all();
-        return view("todos.index", compact("todos"));
+        $news = News::all();
+        return view("todos.index", compact("news")); // Loads "todos.index"
+    }
+
+    public function newsPage()
+    {
+        $news = News::all();
+        return view("pages.news", compact("news")); // Loads "pages.news"
     }
 }
+
+
 

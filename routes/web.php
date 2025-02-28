@@ -7,9 +7,9 @@ use App\Http\Controllers\NewsController;
 Route::get('/', function () {
     return view('pages/home');
 });
-Route::get('/news', function () {
-    return view('pages/news');
-});
+
+Route::get('/news', [NewsController::class, 'newsPage']);
+
 Route::get('/games', function () {
     return view('pages/games');
 });
