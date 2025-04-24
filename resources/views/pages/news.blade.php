@@ -5,10 +5,10 @@
 @section('headerTitle', 'Welcome to the Up-To-Date News!') <!-- This changes header -->
 
 @section('content')
-<h1>Sveiks 2!</h1>
+<h1>Sveiks!</h1>
 <ul>
-  @foreach ($news as $new)
-    <li>{{ $new->content }}</li>
+@foreach ($news as $new)
+  <li><a href="/pages/{{ $new->id }}">{{ $new->content }}</a></li>
   @endforeach
 </ul>
 @endsection
