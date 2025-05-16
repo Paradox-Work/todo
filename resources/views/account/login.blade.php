@@ -1,23 +1,22 @@
-@extends('layouts.main')
+<x-layout>
+    <x-slot:title>User Account</x-slot:title>
+    <x-slot:headerTitle>Welcome to your Account!</x-slot:headerTitle>
 
-@section('title', 'User Account') <!-- This changes <title> -->
+    <h2>Login</h2>
 
-@section('headerTitle', 'Welcome to the your Account!') <!-- This changes header -->
+    <form action="/login" method="POST">
+        @csrf
 
-@section('content')
-<h2>Login</h2>
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
 
-        <form action="/login" method="POST">
-            @csrf
-            @if ($errors->any())
-  <ul>
-    @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-@endif
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
-@endsection
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+</x-layout>
