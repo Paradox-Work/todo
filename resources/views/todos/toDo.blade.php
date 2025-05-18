@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:title>Up-To-Date News</x-slot:title>
+    <x-slot:title>ToDo list</x-slot:title>
 
     <h1>Welcome to the Up-To-Date News!</h1>
     @auth

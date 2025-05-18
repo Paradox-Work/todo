@@ -9,4 +9,8 @@
         <button>Save</button>
         
     </form>
+    @error("content")
+  <p style="color:red;">{{ $message }}</p>
+    @enderror
+
 </x-layout>

@@ -10,20 +10,22 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('to_dos', function (Blueprint $table) {
-            $table->id();
-            $table->string("content");
-            $table->boolean("completed");
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('diary_entries', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->text('body');
+        $table->date('date');
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('to_dos');
+        Schema::dropIfExists('diary_entries');
     }
 };
