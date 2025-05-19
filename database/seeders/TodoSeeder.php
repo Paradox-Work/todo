@@ -2,17 +2,13 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\ToDo;
 
 class TodoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        \App\Models\Todo::factory()->count(20)->create();
-
+        ToDo::factory()->count(20)->create();
     }
 }

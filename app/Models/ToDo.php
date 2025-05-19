@@ -9,12 +9,5 @@ class ToDo extends Model
 {
     use HasFactory;
 
-    protected $table = 'to_dos'; // matches your migration table
-
-    protected $fillable = [
-        'content',
-        'priority',
-        'completed',
-    ];
+    protected $fillable = ['content', 'priority', 'completed'];
 }
-
